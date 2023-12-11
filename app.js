@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const getLaunches = require("./routes/launchesRoute");
-app.use("/flight", getLaunches);
+app.use("/", getLaunches);
 
 
 

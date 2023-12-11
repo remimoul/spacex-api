@@ -18,3 +18,14 @@ exports.listAllLaunches = async (req,res) => {
         res.status(401).json({message : "requete invalide"});
     }
 }
+
+
+exports.listLaunches = async (req,res) => {
+    try{
+        const searchAll = await modelSpace.find({});
+        res.status(201).json(searchAll);
+    }catch (error){
+        res.status(500);
+        res.json({message: "erreur serveur"});
+    }
+}
