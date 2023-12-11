@@ -5,8 +5,8 @@ const modelSpace = require("../model/launchesModel")
 exports.listAllLaunches = async (req,res) => {
     try {
 
-        let test = spaceApi.getAllLaunches();
-        let response = await test;
+        let listLaunches = spaceApi.getAllLaunches();
+        let response = await listLaunches;
         for (let i=0; i < response.length; i++){
             let getLaunches = new modelSpace(response[i]);
             await getLaunches.save();
